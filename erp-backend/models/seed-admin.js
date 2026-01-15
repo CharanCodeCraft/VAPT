@@ -20,7 +20,7 @@ async function seedAdmin() {
     email: 'admin@erp.com',
     password: 'admin123',
     fullName: 'ERP Administrator'
-  });
+  }); 
   
   await admin.save();
   console.log('Admin created: admin@erp.com / admin123');
