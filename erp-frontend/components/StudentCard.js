@@ -4,13 +4,9 @@ import { useRouter } from 'next/navigation';
 export default function StudentCard({ student, currentStudentId }) {
   const router = useRouter();
 
-  const viewProfile = () => {
-    router.push(`/profile/${student._id}?requestorid=${currentStudentId}`);
-  };
 
   return (
     <div 
-      onClick={viewProfile}
       className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer p-6 border border-gray-200"
     >
       <div className="flex flex-col items-center">
@@ -44,11 +40,6 @@ export default function StudentCard({ student, currentStudentId }) {
           {student.department || 'N/A'}
         </p>
         
-        <div className="w-full pt-3 border-t border-gray-200">
-          <p className="text-xs text-gray-400 text-center font-mono">
-            ID: {student._id.substring(0, 8)}...
-          </p>
-        </div>
       </div>
     </div>
   );
