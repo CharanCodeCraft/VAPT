@@ -13,11 +13,12 @@ export default function AdminLogin() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await api.post('/admin/login', form);
+      const res = await api.post('/admin/auth/login', form);
       localStorage.setItem('adminToken', res.data.token);
       localStorage.setItem('admin', JSON.stringify(res.data.admin));
       router.replace('/admin/dashboard');
     } catch (err) {
+        console.log(res);
       alert(err?.response?.data?.message || 'Login failed');
     } finally {
       setLoading(false);

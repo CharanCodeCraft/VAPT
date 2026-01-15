@@ -53,7 +53,7 @@ export default function StudentsPage() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search by name, USN, email…"
-          className="flex-1 px-3 py-2 rounded-md border border-gray-300 text-sm"
+          className="flex-1 px-3 py-2 rounded-md border border-gray-300 text-sm text-white"
         />
         <button
           type="submit"
@@ -92,7 +92,7 @@ export default function StudentsPage() {
               </tr>
             ) : (
               students.map((s) => (
-                <tr key={s._id} className="border-b last:border-b-0 hover:bg-gray-50">
+                <tr key={s._id} className="border-b last:border-b-0 hover:bg-gray-50 text-black">
                   <td className="py-2 px-3">{s.name}</td>
                   <td className="px-3 font-mono text-xs">{s.usn}</td>
                   <td className="px-3">{s.email}</td>

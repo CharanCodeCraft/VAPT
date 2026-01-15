@@ -37,7 +37,7 @@ export default function AdminDashboard() {
         </div>
         <div className="bg-white rounded-xl shadow p-4">
           <p className="text-sm text-gray-500">IDOR lab ready</p>
-          <p className="text-lg mt-1">
+          <p className="text-lg mt-1 text-black">
             Data seeded by admin is directly consumable by the student portal.
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function AdminDashboard() {
 
       <div className="bg-white rounded-xl shadow p-4">
         <div className="flex items-center justify-between mb-3">
-          <h2 className="font-semibold">Latest students</h2>
+          <h2 className="font-semibold text-black">Latest students</h2>
         </div>
         <table className="w-full text-sm">
           <thead>
@@ -59,7 +59,7 @@ export default function AdminDashboard() {
           </thead>
           <tbody>
             {summary.latest.map((s) => (
-              <tr key={s._id} className="border-b last:border-b-0">
+              <tr key={s._id} className="border-b last:border-b-0 text-black">
                 <td className="py-2">{s.name}</td>
                 <td>{s.email}</td>
                 <td className="font-mono text-xs">{s.usn}</td>
