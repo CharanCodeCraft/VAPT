@@ -76,7 +76,7 @@ export default function AddStudent() {
       const res = await api.post('/admin/students', payload);
       setInfo(
         `Student created.\nEmail: ${res.data.loginCredentials?.email || payload.email}\nPassword: ${
-          res.data.loginCredentials?.password || payload.password
+          res.data.temporaryPassword
         }`
       );
       // Optionally, reset form
