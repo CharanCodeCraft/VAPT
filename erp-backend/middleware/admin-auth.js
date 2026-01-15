@@ -1,0 +1,22 @@
+const jwt = require('jsonwebtoken');
+
+const verifyAdminToken = (req, res, next) => {
+  const token = req.header('Authorization')?.replace('Bearer ', '');
+  
+  if (!token) {
+    return res.status(401).json({ message: 'Admin access required' });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    if (decoded.role !== 'admin') {
+      return res.status(403).json({ message: 'Admin access only' });
+    }
+    req.admin = decoded;
+    next();
+  } catch (error) {
+    res.status(401).json({ message: 'Invalid admin token' });
+  }
+};
+
+module.exports = { verifyAdminToken };
