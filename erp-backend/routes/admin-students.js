@@ -8,7 +8,7 @@ router.post('/', verifyAdminToken, async (req, res) => {
   try {
     // Generate temporary password (admin sets it)
     const tempPassword = Math.random().toString(36).slice(-8);
-    
+    console.log(`Generated temporary password for ${req.body.email}: ${tempPassword}`);
     const student = new Student({
       ...req.body,
       password: await require('bcryptjs').hash(tempPassword, 10)
