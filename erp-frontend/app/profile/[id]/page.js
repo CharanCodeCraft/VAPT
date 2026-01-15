@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import api from '@/lib/api';
+import Navbar from '@/components/Navbar';
 
 export default function ProfileDetail() {
   const params = useParams();
@@ -26,8 +27,9 @@ export default function ProfileDetail() {
   if (!profileData) return <div className="p-8">Loading...</div>;
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow p-8">
+    <div className="min-h-screen bg-gray-100 ">
+        <Navbar/>
+      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow m-5 p-8 text-black">
         <h1 className="text-2xl font-bold mb-6">Student Profile</h1>
         
         <div className="grid grid-cols-2 gap-4">
